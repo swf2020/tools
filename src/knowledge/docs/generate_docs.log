@@ -1,0 +1,219 @@
+2026-02-26 22:05:15,599 [ERROR] 请设置环境变量 ANTHROPIC_API_KEY
+2026-02-26 22:12:22,826 [INFO] SKILL.md 加载完成，长度 3491 字符
+2026-02-26 22:12:43,687 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:13:12,605 [INFO] === DRY-RUN 任务列表 ===
+2026-02-26 22:13:14,114 [INFO]   [技术] 领域驱动设计(DDD)
+2026-02-26 22:13:15,481 [INFO]   [技术点] MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:13:16,606 [INFO]   [技术点] 读已提交(RC)每次读生成新ReadView
+2026-02-26 22:13:17,620 [INFO]   [技术点] 可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:13:19,717 [INFO] 共 4 个任务
+2026-02-26 22:14:24,547 [INFO] SKILL.md 加载完成，长度 3491 字符
+2026-02-26 22:14:24,549 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:14:56,374 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:15:47,754 [INFO] [1/3] 开始生成：领域驱动设计(DDD)
+2026-02-26 22:17:03,271 [INFO] [1/3] 开始生成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:17:09,260 [INFO] [1/3] 开始生成：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:17:18,246 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:18,255 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:18,261 [ERROR] API 错误（403）：领域驱动设计(DDD) → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:18,905 [ERROR] API 错误（403）：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:19,055 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:19,061 [ERROR] API 错误（403）：读已提交(RC)每次读生成新ReadView → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:38,337 [INFO] [1/3] 开始生成：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:17:42,729 [INFO] [2/3] 开始生成：领域驱动设计(DDD)
+2026-02-26 22:17:42,742 [INFO] [2/3] 开始生成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:17:43,400 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:44,719 [ERROR] API 错误（403）：可重复读(RR)事务开始时生成ReadView → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:44,725 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:44,733 [ERROR] API 错误（403）：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:44,936 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:44,943 [ERROR] API 错误（403）：领域驱动设计(DDD) → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:54,724 [INFO] [2/3] 开始生成：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:17:54,745 [INFO] [2/3] 开始生成：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:17:54,944 [INFO] [3/3] 开始生成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:17:55,562 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:55,572 [ERROR] API 错误（403）：可重复读(RR)事务开始时生成ReadView → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:55,806 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:55,813 [ERROR] API 错误（403）：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:55,814 [ERROR] ❌ 放弃：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:17:55,815 [INFO] [3/3] 开始生成：领域驱动设计(DDD)
+2026-02-26 22:17:56,035 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:56,044 [ERROR] API 错误（403）：领域驱动设计(DDD) → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:17:56,044 [ERROR] ❌ 放弃：领域驱动设计(DDD)
+2026-02-26 22:17:56,436 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 403 Forbidden"
+2026-02-26 22:17:56,444 [ERROR] API 错误（403）：读已提交(RC)每次读生成新ReadView → Error code: 403 - {'error': {'type': 'forbidden', 'message': 'Request not allowed'}}
+2026-02-26 22:20:20,798 [INFO] SKILL.md 加载完成，长度 3491 字符
+2026-02-26 22:20:20,798 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:20:37,071 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:20:42,831 [INFO] [1/3] 开始生成：领域驱动设计(DDD)
+2026-02-26 22:20:45,517 [INFO] [1/3] 开始生成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:20:49,391 [INFO] [1/3] 开始生成：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:20:58,548 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:20:59,032 [INFO] ✅ 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 13.4s | 输入 46 tokens（缓存命中 2241，缓存写入 983）| 输出 41 tokens
+2026-02-26 22:20:59,033 [ERROR] 未知错误：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 → 'ToolUseBlock' object has no attribute 'text'
+2026-02-26 22:21:05,607 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:21:05,626 [INFO] ✅ 完成：读已提交(RC)每次读生成新ReadView | 耗时 15.7s | 输入 43 tokens（缓存命中 2237，缓存写入 199）| 输出 0 tokens
+2026-02-26 22:21:05,627 [ERROR] 未知错误：读已提交(RC)每次读生成新ReadView → 'ToolUseBlock' object has no attribute 'text'
+2026-02-26 22:25:45,844 [INFO] SKILL.md 加载完成，长度 3491 字符
+2026-02-26 22:25:45,845 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:25:45,846 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:25:45,908 [INFO] [1/3] 开始生成：领域驱动设计(DDD)
+2026-02-26 22:25:45,911 [INFO] [1/3] 开始生成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:25:45,913 [INFO] [1/3] 开始生成：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:25:51,396 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:25:51,647 [INFO] ✅ 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 5.7s | 输入 46 tokens（缓存命中 2241，缓存写入 289）| 输出 0 tokens
+2026-02-26 22:26:01,786 [INFO] 💾 已保存：docs/MySQL隔离级别(RU_RC_RR_Serializable)实现机制_20260226.md
+2026-02-26 22:26:01,787 [INFO] [1/3] 开始生成：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:26:01,800 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:26:01,802 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:26:01,806 [INFO] ✅ 完成：读已提交(RC)每次读生成新ReadView | 耗时 15.9s | 输入 43 tokens（缓存命中 2237，缓存写入 511）| 输出 0 tokens
+2026-02-26 22:26:02,882 [INFO] 💾 已保存：docs/读已提交(RC)每次读生成新ReadView_20260226.md
+2026-02-26 22:26:02,884 [INFO] ✅ 完成：领域驱动设计(DDD) | 耗时 17.0s | 输入 38 tokens（缓存命中 2232，缓存写入 677）| 输出 20 tokens
+2026-02-26 22:26:03,444 [INFO] 💾 已保存：docs/领域驱动设计(DDD)_20260226.md
+2026-02-26 22:26:16,593 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:26:16,603 [INFO] ✅ 完成：可重复读(RR)事务开始时生成ReadView | 耗时 14.8s | 输入 43 tokens（缓存命中 2238，缓存写入 117）| 输出 0 tokens
+2026-02-26 22:26:18,783 [INFO] 💾 已保存：docs/可重复读(RR)事务开始时生成ReadView_20260226.md
+2026-02-26 22:26:18,784 [INFO] ==================================================
+2026-02-26 22:26:18,784 [INFO] 生成完成：成功 4 个，失败 0 个
+2026-02-26 22:39:02,697 [INFO] SKILL.md 加载完成，长度 3449 字符
+2026-02-26 22:39:02,697 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:39:02,698 [INFO] 系统提示词构造完成，长度 3605 字符
+2026-02-26 22:39:02,699 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:39:02,756 [INFO] [1/3] 生成中：领域驱动设计(DDD)
+2026-02-26 22:39:02,759 [INFO] [1/3] 生成中：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:39:02,761 [INFO] [1/3] 生成中：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:39:08,968 [INFO] Retrying request to /v1/messages in 0.493926 seconds
+2026-02-26 22:39:11,243 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:39:11,421 [INFO] 完成：领域驱动设计(DDD) | 耗时 8.7s | 输入 115 tokens（缓存命中 2391 / 缓存写入 837）| 输出 129 tokens
+2026-02-26 22:39:11,421 [ERROR] 响应中无 TextBlock，跳过：领域驱动设计(DDD)，块类型：['ToolUseBlock']
+2026-02-26 22:39:11,421 [INFO] [1/3] 生成中：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:39:30,185 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:39:30,200 [INFO] 完成：读已提交(RC)每次读生成新ReadView | 耗时 27.4s | 输入 126 tokens（缓存命中 2402 / 缓存写入 80）| 输出 634 tokens
+2026-02-26 22:39:30,200 [ERROR] 响应中无 TextBlock，跳过：读已提交(RC)每次读生成新ReadView，块类型：['ToolUseBlock']
+2026-02-26 22:39:32,845 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:39:32,851 [INFO] 完成：可重复读(RR)事务开始时生成ReadView | 耗时 21.4s | 输入 128 tokens（缓存命中 2403 / 缓存写入 362）| 输出 662 tokens
+2026-02-26 22:39:32,852 [ERROR] 响应中无 TextBlock，跳过：可重复读(RR)事务开始时生成ReadView，块类型：['ToolUseBlock']
+2026-02-26 22:39:52,367 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:39:52,372 [INFO] 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 49.6s | 输入 133 tokens（缓存命中 2408 / 缓存写入 273）| 输出 1895 tokens
+2026-02-26 22:39:52,373 [ERROR] 响应中无 TextBlock，跳过：MySQL隔离级别(RU/RC/RR/Serializable)实现机制，块类型：['ToolUseBlock']
+2026-02-26 22:39:52,373 [INFO] ==================================================
+2026-02-26 22:39:52,373 [INFO] 生成完成：成功 0 个，失败 4 个
+2026-02-26 22:39:52,373 [WARNING] 失败主题：['领域驱动设计(DDD)', '读已提交(RC)每次读生成新ReadView', '可重复读(RR)事务开始时生成ReadView', 'MySQL隔离级别(RU/RC/RR/Serializable)实现机制']
+2026-02-26 22:39:52,374 [INFO] 失败列表已保存至：docs/failed_topics.txt，可用 --topic 逐个重跑
+2026-02-26 22:45:12,028 [INFO] SKILL.md 加载完成，长度 3449 字符
+2026-02-26 22:45:12,029 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:45:12,029 [INFO] 系统提示词构造完成，长度 3605 字符
+2026-02-26 22:45:12,030 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:45:12,091 [INFO] [1/3] 生成中：领域驱动设计(DDD)
+2026-02-26 22:45:12,095 [INFO] [1/3] 生成中：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:45:12,097 [INFO] [1/3] 生成中：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:45:18,023 [INFO] Retrying request to /v1/messages in 0.498405 seconds
+2026-02-26 22:45:18,066 [INFO] Retrying request to /v1/messages in 0.376067 seconds
+2026-02-26 22:45:25,330 [INFO] Retrying request to /v1/messages in 0.801013 seconds
+2026-02-26 22:45:41,904 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:45:42,077 [INFO] 完成：领域驱动设计(DDD) | 耗时 30.0s | 输入 115 tokens（缓存命中 2401 / 缓存写入 442）| 输出 654 tokens
+2026-02-26 22:45:42,077 [ERROR] ToolUseBlock详情 - name: Write, input: {}
+2026-02-26 22:45:42,077 [ERROR] 无法提取文本内容，跳过：领域驱动设计(DDD)，块类型：['ToolUseBlock']
+2026-02-26 22:45:42,077 [INFO] [1/3] 生成中：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:45:56,276 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:45:56,294 [INFO] 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 44.2s | 输入 133 tokens（缓存命中 2418 / 缓存写入 785）| 输出 1662 tokens
+2026-02-26 22:45:56,294 [ERROR] ToolUseBlock详情 - name: Write, input: {}
+2026-02-26 22:45:56,294 [ERROR] 无法提取文本内容，跳过：MySQL隔离级别(RU/RC/RR/Serializable)实现机制，块类型：['ToolUseBlock']
+2026-02-26 22:48:10,493 [INFO] SKILL.md 加载完成，长度 3238 字符
+2026-02-26 22:48:10,494 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:48:10,495 [INFO] 系统提示词构造完成，长度 3394 字符
+2026-02-26 22:48:10,495 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:48:10,554 [INFO] [1/3] 生成中：领域驱动设计(DDD)
+2026-02-26 22:48:10,558 [INFO] [1/3] 生成中：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:48:10,560 [INFO] [1/3] 生成中：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:48:16,512 [INFO] Retrying request to /v1/messages in 0.415662 seconds
+2026-02-26 22:48:19,001 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:48:22,356 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:48:22,535 [INFO] 完成：领域驱动设计(DDD) | 耗时 12.0s | 输入 95 tokens（缓存命中 2285 / 缓存写入 8）| 输出 128 tokens
+2026-02-26 22:48:22,535 [ERROR] ToolUseBlock详情 - name: TodoWrite, input: {}
+2026-02-26 22:48:22,535 [ERROR] 无法提取文本内容，跳过：领域驱动设计(DDD)，块类型：['ToolUseBlock']
+2026-02-26 22:48:22,535 [INFO] [1/3] 生成中：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:48:23,175 [INFO] 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 12.6s | 输入 112 tokens（缓存命中 2302 / 缓存写入 556）| 输出 191 tokens
+2026-02-26 22:48:23,176 [ERROR] ToolUseBlock详情 - name: TodoWrite, input: {}
+2026-02-26 22:48:23,176 [ERROR] 无法提取文本内容，跳过：MySQL隔离级别(RU/RC/RR/Serializable)实现机制，块类型：['ToolUseBlock']
+2026-02-26 22:48:32,393 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:48:32,404 [INFO] 完成：可重复读(RR)事务开始时生成ReadView | 耗时 9.9s | 输入 107 tokens（缓存命中 2297 / 缓存写入 287）| 输出 304 tokens
+2026-02-26 22:48:32,404 [ERROR] ToolUseBlock详情 - name: Task, input: {}
+2026-02-26 22:48:32,404 [ERROR] 无法提取文本内容，跳过：可重复读(RR)事务开始时生成ReadView，块类型：['ToolUseBlock']
+2026-02-26 22:48:37,305 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:48:37,313 [INFO] 完成：读已提交(RC)每次读生成新ReadView | 耗时 26.8s | 输入 106 tokens（缓存命中 2296 / 缓存写入 222）| 输出 901 tokens
+2026-02-26 22:48:37,313 [ERROR] ToolUseBlock详情 - name: Write, input: {}
+2026-02-26 22:48:37,313 [ERROR] 无法提取文本内容，跳过：读已提交(RC)每次读生成新ReadView，块类型：['ToolUseBlock']
+2026-02-26 22:48:37,313 [INFO] ==================================================
+2026-02-26 22:48:37,313 [INFO] 生成完成：成功 0 个，失败 4 个
+2026-02-26 22:48:37,313 [WARNING] 失败主题：['领域驱动设计(DDD)', 'MySQL隔离级别(RU/RC/RR/Serializable)实现机制', '可重复读(RR)事务开始时生成ReadView', '读已提交(RC)每次读生成新ReadView']
+2026-02-26 22:48:37,314 [INFO] 失败列表已保存至：docs/failed_topics.txt，可用 --topic 逐个重跑
+2026-02-26 22:55:49,483 [INFO] SKILL.md 加载完成，长度 3238 字符
+2026-02-26 22:55:49,483 [INFO] 共加载 4 个主题（来源类型：['技术', '技术点']）
+2026-02-26 22:55:49,484 [INFO] 系统提示词构造完成，长度 3394 字符
+2026-02-26 22:55:49,485 [INFO] 待生成 4 个主题，并发数 3
+2026-02-26 22:55:49,549 [INFO] [1/3] 生成中：领域驱动设计(DDD)
+2026-02-26 22:55:49,554 [INFO] [1/3] 生成中：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:55:49,556 [INFO] [1/3] 生成中：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:55:55,571 [INFO] Retrying request to /v1/messages in 0.474898 seconds
+2026-02-26 22:55:56,659 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:55:56,841 [INFO] 完成：读已提交(RC)每次读生成新ReadView | 耗时 7.3s | 输入 126 tokens（缓存命中 2316 / 缓存写入 652）| 输出 122 tokens
+2026-02-26 22:55:56,841 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：读已提交(RC)每次读生成新ReadView
+原始响应：''
+2026-02-26 22:55:56,841 [INFO] 将在 10s 后重试...
+2026-02-26 22:55:56,843 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:55:56,845 [INFO] 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 7.3s | 输入 133 tokens（缓存命中 2323 / 缓存写入 725）| 输出 152 tokens
+2026-02-26 22:55:56,845 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+原始响应：''
+2026-02-26 22:55:56,845 [INFO] 将在 10s 后重试...
+2026-02-26 22:56:06,846 [INFO] [1/3] 生成中：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:56:06,857 [INFO] [2/3] 生成中：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:56:16,673 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:56:16,684 [INFO] 完成：可重复读(RR)事务开始时生成ReadView | 耗时 9.8s | 输入 128 tokens（缓存命中 2318 / 缓存写入 710）| 输出 331 tokens
+2026-02-26 22:56:16,684 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：可重复读(RR)事务开始时生成ReadView
+原始响应：''
+2026-02-26 22:56:16,685 [INFO] 将在 10s 后重试...
+2026-02-26 22:56:20,461 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:56:20,474 [INFO] 完成：读已提交(RC)每次读生成新ReadView | 耗时 13.6s | 输入 126 tokens（缓存命中 2316 / 缓存写入 482）| 输出 131 tokens
+2026-02-26 22:56:20,474 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：读已提交(RC)每次读生成新ReadView
+原始响应：''
+2026-02-26 22:56:20,475 [INFO] 将在 10s 后重试...
+2026-02-26 22:56:26,687 [INFO] [2/3] 生成中：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:56:28,606 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:56:28,609 [INFO] 完成：领域驱动设计(DDD) | 耗时 39.1s | 输入 115 tokens（缓存命中 2305 / 缓存写入 585）| 输出 725 tokens
+2026-02-26 22:56:28,609 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：领域驱动设计(DDD)
+原始响应：''
+2026-02-26 22:56:28,609 [INFO] 将在 10s 后重试...
+2026-02-26 22:56:30,477 [INFO] [2/3] 生成中：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:56:38,609 [INFO] [3/3] 生成中：读已提交(RC)每次读生成新ReadView
+2026-02-26 22:57:00,812 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:57:00,821 [INFO] 完成：读已提交(RC)每次读生成新ReadView | 耗时 22.2s | 输入 126 tokens（缓存命中 2316 / 缓存写入 299）| 输出 674 tokens
+2026-02-26 22:57:00,821 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：读已提交(RC)每次读生成新ReadView
+原始响应：''
+2026-02-26 22:57:00,821 [INFO] [2/3] 生成中：领域驱动设计(DDD)
+2026-02-26 22:57:03,576 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:57:03,587 [INFO] 完成：领域驱动设计(DDD) | 耗时 2.8s | 输入 115 tokens（缓存命中 2305 / 缓存写入 632）| 输出 0 tokens
+2026-02-26 22:57:03,588 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：领域驱动设计(DDD)
+原始响应：''
+2026-02-26 22:57:03,588 [INFO] 将在 10s 后重试...
+2026-02-26 22:57:12,891 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:57:12,904 [INFO] 完成：可重复读(RR)事务开始时生成ReadView | 耗时 42.4s | 输入 128 tokens（缓存命中 2318 / 缓存写入 377）| 输出 1645 tokens
+2026-02-26 22:57:12,904 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：可重复读(RR)事务开始时生成ReadView
+原始响应：''
+2026-02-26 22:57:12,904 [INFO] 将在 10s 后重试...
+2026-02-26 22:57:13,589 [INFO] [3/3] 生成中：领域驱动设计(DDD)
+2026-02-26 22:57:14,799 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:57:14,806 [INFO] 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 48.1s | 输入 133 tokens（缓存命中 2323 / 缓存写入 520）| 输出 1568 tokens
+2026-02-26 22:57:14,807 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+原始响应：''
+2026-02-26 22:57:14,807 [INFO] 将在 10s 后重试...
+2026-02-26 22:57:22,118 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:57:22,132 [INFO] 完成：领域驱动设计(DDD) | 耗时 8.5s | 输入 115 tokens（缓存命中 2305 / 缓存写入 139）| 输出 0 tokens
+2026-02-26 22:57:22,132 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：领域驱动设计(DDD)
+原始响应：''
+2026-02-26 22:57:22,906 [INFO] [3/3] 生成中：可重复读(RR)事务开始时生成ReadView
+2026-02-26 22:57:24,810 [INFO] [3/3] 生成中：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+2026-02-26 22:57:31,213 [INFO] HTTP Request: POST https://crsacc.itssx.com/api/v1/messages "HTTP/1.1 200 OK"
+2026-02-26 22:57:31,220 [INFO] 完成：MySQL隔离级别(RU/RC/RR/Serializable)实现机制 | 耗时 6.4s | 输入 133 tokens（缓存命中 2323 / 缓存写入 786）| 输出 118 tokens
+2026-02-26 22:57:31,221 [WARNING] 响应内容过短（0 字符），可能未正确生成文档：MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+原始响应：''

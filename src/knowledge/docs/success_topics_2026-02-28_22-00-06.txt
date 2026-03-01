@@ -1,0 +1,442 @@
+成功处理的主题列表:
+==================================================
+- Java类初始化触发时机(<clinit>执行条件)
+- JVM标量替换优化
+- CompletableFuture任务编排与异常传播
+- JVM运行时数据区内存模型
+- Java Stream并行流ForkJoin实现
+- JVM方法内联优化
+- JVM即时编译(JIT)分层编译(C1/C2)
+- JVM安全点(Safepoint)机制
+- Java响应式流(Flow API)背压机制
+- JVM逃逸分析与栈上分配
+- Java序列化协议(Serializable/Externalizable)
+- JVM偏向锁撤销批量机制
+- G1垃圾收集器Region分区与混合回收
+- JVM字符串常量池(String.intern()原理)
+- 内存映射文件(MappedByteBuffer)读写原理
+- ZGC染色指针(Colored Pointer)与读屏障
+- Java Agent(premain/agentmain)插桩机制
+- Instrumentation API字节码替换
+- Java模块系统(JPMS)模块描述符与可见性
+- Java Pattern Matching模式匹配
+- Java直接内存(DirectByteBuffer)申请与回收
+- Java Record不可变数据类实现
+- Java Switch表达式增强
+- 字节码增强框架(ByteBuddy DSL操作)
+- 字节码增强框架(Javassist源码级操作)
+- Java Sealed Class封闭类型层级
+- 字节码增强框架(ASM指令操作)
+- Disruptor无锁队列RingBuffer实现
+- Disruptor序号屏障(SequenceBarrier)机制
+- Copy-On-Write(COW)写时复制机制
+- Disruptor伪共享(False Sharing)消除(缓存行填充)
+- Varhandle替代Unsafe的原子操作
+- ConcurrentSkipListMap跳表并发实现
+- SynchronousQueue无缓冲传递机制
+- LinkedTransferQueue传递语义
+- LMAX Disruptor事件溯源模式
+- Proactor异步IO线程模型
+- DelayQueue优先级堆排序延迟消费
+- ConcurrentHashMap分段锁(JDK7)与CAS+synchronized(JDK8)实现
+- Reactor线程模型(单Reactor/多Reactor)
+- Project Reactor Mono/Flux操作符融合(Operator Fusion)
+- 协程(Kotlin Coroutine)挂起与恢复机制
+- 背压(Backpressure)策略(DROP/BUFFER/LATEST/ERROR)
+- select/poll/epoll三种IO多路复用对比
+- Epoll边缘触发(ET)与水平触发(LT)差异
+- Epoll红黑树+就绪链表数据结构
+- RxJava调度器(Scheduler)线程切换原理
+- TCP三次握手状态机
+- TCP四次挥手TIME_WAIT状态与SO_REUSEPORT
+- TCP滑动窗口流量控制
+- Kotlin Flow冷流与热流(SharedFlow/StateFlow)
+- TCP拥塞控制(慢启动/拥塞避免/快重传/快恢复)
+- TCP Nagle算法与TCP_NODELAY
+- TCP KeepAlive心跳探测
+- HTTP/2服务端推送(Server Push)
+- TCP粘包拆包问题与解决方案
+- HTTP/1.1持久连接与管道化
+- HTTP/3基于QUIC的流控
+- QUIC协议0-RTT握手与多路复用
+- SSE(Server-Sent Events)事件流格式
+- HTTP/2帧结构与HPACK头部压缩
+- WebSocket帧协议与掩码机制
+- UDP可靠传输(KCP协议实现)
+- gRPC四种通信模式(Unary/ServerStream/ClientStream/BiStream)
+- gRPC连接多路复用与负载均衡(pick_first/round_robin)
+- Protobuf变长编码(Varint)与字段编号
+- Long Polling连接保持与超时重连
+- TLS 1.3握手流程(1-RTT/0-RTT)
+- DNS解析过程(递归查询/迭代查询)
+- TLS证书链验证与OCSP Stapling
+- mTLS双向认证原理
+- HTTPS证书透明度(CT日志)
+- DNS本地缓存与TTL
+- Nginx事件驱动模型(master-worker进程)
+- Nginx限流(limit_req/limit_conn)令牌桶实现
+- Nginx upstream keepalive连接池
+- Netty内存泄漏检测(ResourceLeakDetector采样)
+- Netty ByteBuf内存池(PooledByteBufAllocator)与Chunk/Page/SubPage
+- Netty Pipeline职责链事件传播
+- Netty心跳检测(IdleStateHandler读写超时)
+- Netty零拷贝(CompositeBuffer/FileRegion/transferTo)
+- Netty FastThreadLocal原理
+- Spring BeanDefinition注册与合并
+- Spring三级缓存解决循环依赖
+- Spring Bean生命周期(实例化/属性注入/初始化/销毁)
+- Spring IOC容器启动流程(refresh()12步)
+- Spring AOP通知类型与执行顺序
+- Spring @Transactional自调用失效原因(代理对象绕过)
+- Spring AOP代理创建时机(postProcessAfterInitialization)
+- Spring @Transactional事务传播行为(REQUIRED/REQUIRES_NEW/NESTED等)
+- Spring事件驱动(ApplicationEvent/ApplicationListener/EventPublisher)
+- Spring事务同步机制(TransactionSynchronizationManager)
+- Spring Boot条件注解(@ConditionalOnClass/@ConditionalOnMissingBean等)
+- Spring Boot外部化配置加载顺序(PropertySource优先级)
+- Spring异步事件(@Async+@EventListener)
+- Spring Boot自动装配(AutoConfigurationImportSelector条件注解)
+- Spring Boot优雅停机(GracefulShutdown等待请求完成)
+- Spring Boot Actuator端点暴露与安全配置
+- Spring Cloud LoadBalancer负载均衡策略(RoundRobin/Random/WeightedResponse)
+- Spring Cloud Gateway路由断言与过滤器链
+- Spring Cloud OpenFeign动态代理请求构建
+- Spring Security过滤器链(SecurityFilterChain)执行顺序
+- Spring Data JPA审计(@CreatedDate/@LastModifiedDate)
+- Spring Cloud Gateway限流(RequestRateLimiter+Redis令牌桶)
+- Spring Integration消息通道与端点
+- Spring Cache抽象(CacheManager/CacheInterceptor/KeyGenerator)
+- Spring Security OAuth2资源服务器JWT验证
+- Spring Batch Step分区并行处理
+- MyBatis Executor类型(Simple/Reuse/Batch)
+- Spring Cloud Config配置刷新(@RefreshScope原理)
+- Spring R2DBC响应式数据库访问
+- MyBatis一级缓存(SqlSession级)与二级缓存(Mapper级)
+- MyBatis插件拦截器四大对象(Executor/StatementHandler/ParameterHandler/ResultSetHandler)
+- Spring WebFlux响应式处理链(RouterFunction/HandlerFunction)
+- MyBatis动态SQL(OGNL表达式解析)
+- MyBatis-Plus乐观锁插件(@Version实现)
+- ShardingSphere SQL解析引擎(ANTLR语法树)
+- ShardingSphere分片路由引擎(标准/复合/Hint路由)
+- ShardingSphere读写分离负载均衡算法
+- MySQL InnoDB B+树索引结构与页分裂
+- MyBatis-Plus自动填充(MetaObjectHandler)
+- MySQL聚簇索引与辅助索引回表(覆盖索引优化)
+- MySQL Multi-Range Read(MRR)优化
+- MySQL索引下推(ICP)优化
+- MySQL联合索引最左前缀匹配原则
+- MySQL Undo Log版本链
+- MySQL MVCC(多版本并发控制)ReadView生成时机
+- MySQL行锁(Record Lock)/间隙锁(Gap Lock)/临键锁(Next-Key Lock)
+- MySQL Redo Log WAL(Write-Ahead Logging)机制
+- MySQL Redo Log组提交(Group Commit)优化
+- MySQL查询优化器代价模型(Cost Model)
+- MySQL Binlog三种格式(STATEMENT/ROW/MIXED)
+- MySQL执行计划(EXPLAIN)各字段含义
+- MySQL Buffer Pool LRU改良算法(young区/old区)
+- MySQL死锁检测(wait-for graph)与自动回滚
+- MySQL双1持久化配置(sync_binlog/innodb_flush_log_at_trx_commit)
+- MySQL自适应哈希索引(AHI)
+- MySQL Change Buffer合并机制(针对辅助索引写优化)
+- MySQL主从复制Binlog同步(IO线程/SQL线程)
+- MySQL GTID全局事务标识符复制
+- MySQL半同步复制(after_sync/after_commit)
+- MySQL深度分页优化(游标分页/子查询延迟关联)
+- MySQL分区表(RANGE/LIST/HASH/KEY分区)路由
+- MySQL隐式类型转换导致索引失效
+- MySQL组复制MGR(Paxos协议)
+- MySQL慢查询日志分析与pt-query-digest
+- MySQL大表在线DDL(Online DDL/pt-online-schema-change/gh-ost)
+- PostgreSQL TOAST大字段存储
+- Redis SDS(简单动态字符串)内存预分配策略
+- PostgreSQL MVCC与Vacuum机制
+- PostgreSQL分区表继承实现
+- Redis ZipList压缩列表编码条件与转换
+- Redis跳表(SkipList)插入与查找时间复杂度
+- PostgreSQL逻辑复制槽(Logical Replication Slot)
+- Redis QuickList双向链表+ZipList结合
+- Redis ListPack紧凑列表(替代ZipList)
+- Redis整数集合(IntSet)升级机制
+- Redis字典(Dict)渐进式rehash
+- Redis LRU近似算法(随机采样池)
+- Redis LFU计数衰减算法
+- Redis AOF重写(BGREWRITEAOF)原理
+- Redis混合持久化(RDB+AOF结合)
+- Redis五种数据类型底层编码选择策略
+- Redis AOF fsync策略(always/everysec/no)权衡
+- Redis主从复制PSYNC2增量同步
+- Redis对象引用计数与共享对象
+- Redis RDB bgsave时fork子进程COW机制
+- Redis Sentinel客观下线(多数投票)判断
+- Redis Cluster Gossip协议节点状态同步
+- Redis Sentinel哨兵Leader选举(Raft变体)
+- Redis Cluster ASK与MOVED重定向
+- Redis发布订阅(Pub/Sub)与Stream对比
+- Redis Lua脚本原子性(单线程执行保证)
+- Redis Cluster哈希槽CRC16分配与迁移
+- Redis Pipeline批量命令减少RTT
+- Redis布隆过滤器(RedisBloom模块)误判率计算
+- Redis WATCH乐观锁事务(CAS机制)
+- Redis GEO地理位置(GeoHash编码)
+- Redis Stream消费者组(Consumer Group)与ACK确认
+- Redis HyperLogLog基数估算算法
+- Redis缓存穿透(布隆过滤器/空值缓存方案)
+- Redisson分布式锁(WatchDog自动续期)
+- Redisson RedLock多节点加锁安全性争议
+- Redis内存碎片整理(activedefrag)
+- Redis缓存击穿(热点Key重建锁/逻辑过期方案)
+- Redis大Key治理(扫描/拆分/异步删除UNLINK)
+- Kafka日志分段(LogSegment)与索引(.index/.timeindex)
+- Kafka顺序写磁盘与pagecache利用
+- Redis热Key治理(本地缓存/读写分离/分片)
+- Kafka零拷贝(sendfile系统调用)
+- Redis缓存雪崩(随机TTL/多级缓存/熔断方案)
+- Kafka生产者幂等性(PID+序号去重)
+- Kafka消息格式(RecordBatch/Record字段结构)
+- Kafka生产者批量发送(batch.size与linger.ms权衡)
+- Kafka生产者事务(两阶段提交+事务协调者)
+- Kafka Leader选举(从ISR中选举优先副本)
+- Kafka消费者Fetch请求长轮询机制
+- Kafka消费者组Rebalance触发条件与流程
+- Kafka ISR(In-Sync Replicas)动态进出机制
+- Kafka消费幂等性(本地去重表/业务唯一键)
+- Kafka Controller选举(基于Zookeeper/KRaft)
+- Kafka KRaft模式(移除Zookeeper依赖)
+- Kafka增量式Rebalance(CooperativeSticky策略)
+- Kafka Offset提交(自动提交风险/手动同步/异步提交)
+- Kafka消息压缩端对端(Producer压缩/Broker透传/Consumer解压)
+- Kafka Streams状态存储(RocksDB本地存储+Changelog Topic)
+- Kafka死信队列(DLQ)设计模式
+- Kafka Streams窗口聚合(滚动/滑动/会话窗口)
+- RocketMQ CommitLog顺序写与ConsumeQueue索引
+- RocketMQ事务消息半消息机制
+- RocketMQ定时消息时间轮实现
+- RocketMQ消费模式(PUSH/PULL)实现差异
+- RabbitMQ Quorum队列(Raft一致性)
+- RocketMQ广播消费与集群消费
+- RabbitMQ死信队列(DLX)与消息TTL
+- RocketMQ消息轨迹追踪机制
+- Kafka延迟消息实现方案(时间轮算法)
+- RabbitMQ消费者预取(prefetch)流控
+- Raft日志复制(AppendEntries RPC/过半确认)
+- Pulsar Topic分区与Bundle动态负载均衡
+- Raft Leader选举(随机超时/过半投票)
+- Paxos Basic Paxos两阶段(Prepare/Accept)
+- ZAB协议(Zookeeper原子广播)与Raft对比
+- Raft成员变更(Joint Consensus联合共识)
+- Raft日志压缩(Snapshot快照安装)
+- Gossip协议反熵(Anti-Entropy)同步
+- Multi-Paxos Leader优化减少阶段数
+- 一致性哈希虚拟节点数据均衡
+- Pulsar存储计算分离(BookKeeper分层存储)
+- 一致性哈希节点增减数据迁移量分析
+- 向量时钟(Vector Clock)因果关系追踪
+- 逻辑时钟(Lamport Clock)事件排序
+- Rendezvous哈希(HRW)与一致性哈希对比
+- Gossip协议谣言传播(Rumor Mongering)
+- 混合逻辑时钟(HLC)物理时间+逻辑时间
+- TrueTime(Spanner全局时间)GPS+原子钟方案
+- Snowflake ID生成(时间戳/机器ID/序号位)
+- UIDGenerator百度版时钟回拨解决方案
+- Snowflake时钟回拨处理策略
+- Leaf美团ID生成(号段模式/Snowflake模式)
+- 令牌桶算法Guava RateLimiter实现
+- 分布式限流(Redis+Lua原子计数)
+- 布隆过滤器误判率计算(哈希函数数量/位数组大小)
+- 漏桶算法实现与突发流量处理局限
+- 布谷鸟过滤器(Cuckoo Filter)支持删除的改进
+- LSM Tree Compaction策略(Size-Tiered/Leveled)
+- LSM Tree(Log-Structured Merge Tree)写优化原理
+- 滑动窗口限流(Redis ZSet实现)
+- 3PC(三阶段提交)超时机制改进
+- 跳跃表(SkipList)期望层高推导
+- 自适应限流(BBR算法/系统负载感知)
+- WAL(Write-Ahead Log)崩溃恢复原理
+- 2PC(两阶段提交)协调者单点与阻塞问题
+- Seata XA模式与数据库原生XA协议
+- MVCC快照隔离(Snapshot Isolation)实现
+- TCC(Try-Confirm-Cancel)空回滚与悬挂问题处理
+- 事务消息(RocketMQ半消息+回查)方案
+- 分布式锁Redlock算法争议(Martin Kleppmann质疑)
+- Saga编排(Orchestration)与协调(Choreography)对比
+- 本地消息表最终一致性方案与轮询补偿
+- Seata AT模式全局锁与undo_log
+- 分布式锁Zookeeper临时顺序节点公平实现
+- 幂等性Token机制(服务端去重表+唯一索引)
+- TiKV MVCC版本存储(RocksDB实现)
+- RocksDB BloomFilter加速点查
+- LevelDB MANIFEST文件版本管理
+- RocksDB Write Stall流控机制
+- RocksDB Block Cache LRU缓存
+- Elasticsearch倒排索引(Posting List压缩:FOR/RoaringBitmap)
+- RocksDB MemTable(跳表)+SSTable分层存储
+- Bitcask存储模型(内存索引+日志文件)
+- Elasticsearch刷新(refresh)与冲洗(flush)区别
+- Elasticsearch BKD树地理空间索引
+- Elasticsearch Segment不可变性与合并策略
+- TiDB执行计划优化(统计信息直方图)
+- Elasticsearch相关性评分(BM25算法)
+- ClickHouse MergeTree存储引擎稀疏索引
+- ClickHouse向量化执行引擎(SIMD指令)
+- Elasticsearch向量检索(HNSW算法)
+- TiDB Region热点分裂与负载均衡
+- HBase RowKey设计与热点问题
+- ClickHouse物化视图增量聚合
+- ClickHouse ReplicatedMergeTree基于Zookeeper的副本同步
+- Cassandra Gossip节点状态同步
+- HBase LSM写路径(MemStore->HFile)
+- Cassandra一致性级别(ONE/QUORUM/ALL)选择
+- Cassandra数据修复(Anti-Entropy Repair)
+- HBase Region分裂与合并策略
+- Kubernetes Pod调度流程(过滤/打分/绑定)
+- 图数据库(Neo4j)原生图存储与遍历
+- 时序数据库(InfluxDB)TSM存储引擎
+- Kubernetes调度器优先级与抢占(Preemption)
+- Kubernetes节点亲和性与污点容忍(Taint/Toleration)
+- Kubernetes控制器协调循环(Reconcile Loop)
+- Kubernetes CRD(自定义资源)与Operator模式
+- Kubernetes VPA垂直扩缩容资源推荐
+- Kubernetes Service ClusterIP iptables/ipvs规则
+- Kubernetes Informer机制(List-Watch+本地缓存)
+- Kubernetes Ingress Nginx WebSocket长连接保持
+- Kubernetes HPA基于自定义指标(Prometheus Adapter)扩缩容
+- Kubernetes KEDA事件驱动弹性伸缩
+- Kubernetes PVC动态供应(StorageClass Provisioner)
+- Kubernetes StatefulSet有状态应用Pod标识稳定性
+- Kubernetes NetworkPolicy网络隔离规则
+- Kubernetes RBAC(Role/ClusterRole/RoleBinding)权限模型
+- Kubernetes Pod优雅终止(preStop Hook+terminationGracePeriodSeconds)
+- Kubernetes Admission Webhook动态准入控制
+- Docker多阶段构建减小镜像体积
+- Docker网络bridge模式veth pair原理
+- Docker overlay网络VXLAN封装
+- Kubernetes ConfigMap热更新(Volume挂载vs环境变量差异)
+- Docker镜像分层(UnionFS OverlayFS2实现)
+- Istio熔断(ConnectionPool/OutlierDetection配置)
+- Kubernetes ResourceQuota与LimitRange资源治理
+- Istio mTLS证书自动轮换(SPIFFE/SVID)
+- Envoy HTTP过滤器链执行顺序
+- Istio流量治理(VirtualService权重路由/故障注入)
+- Envoy xDS动态配置(LDS/RDS/CDS/EDS协议)
+- Envoy集群负载均衡算法(LEAST_REQUEST/RING_HASH)
+- Nacos服务健康检查(临时实例心跳/持久实例探针)
+- Nacos配置推送长轮询(Hold 29.5秒+DataID变更通知)
+- Nacos集群Distro协议(AP临时实例同步)
+- Sentinel热点参数限流(LRU+滑动窗口)
+- Sentinel熔断策略(慢调用比例/异常比例/异常数)
+- Consul健康检查(HTTP/TCP/gRPC/Script多种探针)
+- Nacos集群Raft协议(CP持久实例同步)
+- Sentinel集群限流(Token Server模式)
+- Sentinel滑动窗口统计(LeapArray时间窗口)
+- etcd Lease租约心跳与自动过期
+- etcd MVCC键值存储(BoltDB B+树后端)
+- etcd Watch事件推送(gRPC Stream)
+- SkyWalking字节码增强无侵入埋点原理
+- SkyWalking跨进程传播协议(SW8 Header)
+- Seata RM(Resource Manager)数据源代理原理
+- OpenTelemetry TraceContext W3C传播格式(traceparent)
+- Jaeger Span存储(Cassandra/Elasticsearch后端)
+- Prometheus指标类型(Counter/Gauge/Histogram/Summary语义)
+- OpenTelemetry Baggage跨服务上下文传递
+- Prometheus PromQL范围向量与瞬时向量
+- Prometheus Recording Rule预计算优化查询
+- 分布式追踪采样策略(头部采样/尾部采样/自适应采样)
+- Prometheus Alertmanager分组/抑制/静默规则
+- Prometheus Remote Write协议(WAL+批量推送)
+- Prometheus TSDB Block存储(Chunk/Index/Tombstone)
+- ELK Logstash Grok正则解析
+- Loki日志标签索引(LogQL流选择器)
+- Grafana数据源联邦(Exemplar关联Trace与Metric)
+- Filebeat注册表(Registry)文件偏移追踪
+- 日志采样降噪(INFO降采样/ERROR全量)策略
+- 结构化日志(JSON格式+TraceID字段)最佳实践
+- JVM堆Dump分析内存泄漏(MAT/JProfiler)
+- SLI/SLO/SLA指标体系定义与错误预算(Error Budget)
+- JVM线程Dump分析死锁与阻塞(jstack)
+- async-profiler火焰图CPU与内存热点分析
+- GC日志分析(GCEasy/GCViewer工具)
+- 混沌工程故障注入(ChaosMesh网络延迟/Pod杀死)
+- JWT结构(Header.Payload.Signature)与RS256/HS256算法
+- Arthas在线诊断(trace/watch/ognl/retransform)
+- OAuth2.0授权码模式(PKCE防止code截获)
+- JWT无状态刷新Token机制与黑名单实现
+- OAuth2.0客户端凭证模式(服务间调用)
+- OIDC(OpenID Connect)ID Token身份验证
+- SQL注入防御(预编译参数化查询)
+- RBAC权限模型(Role/Permission/User三元关系)
+- CSRF防御(SameSite Cookie/CSRF Token)
+- XSS防御(Content-Security-Policy/输出编码)
+- ABAC属性基权限控制
+- 零信任网络(BeyondCorp)持续验证原则
+- 接口签名防重放(timestamp+nonce+sign)
+- API限流防暴力破解(IP维度+账号维度双重限流)
+- 密码存储(bcrypt/Argon2自适应哈希)
+- CPU缓存行(Cache Line 64字节)对齐优化
+- 敏感数据加密(AES-256-GCM/RSA-OAEP)
+- NUMA架构内存访问本地性优化
+- SIMD向量化指令并行计算
+- 分支预测优化(减少if-else/循环展开)
+- Secret管理(HashiCorp Vault动态密钥生成)
+- 池化技术(对象池/连接池/线程池)减少GC压力
+- 运行时安全(Falco系统调用规则检测)
+- 镜像安全扫描(Trivy/Clair CVE漏洞检测)
+- 零拷贝(Zero-Copy)sendfile/mmap减少内核态切换
+- 堆外内存(Off-Heap)绕过GC存储大对象
+- 批量操作(Batch)合并IO降低系统调用次数
+- 读写分离流量路由(主写从读)
+- 数据库连接池参数调优(maximumPoolSize=CPU核数×2+磁盘数)
+- 本地缓存Caffeine(W-TinyLFU淘汰算法)
+- 异步化(AsyncIO)解耦计算与等待
+- 堆大小设置原则(活跃数据集×3~4倍)
+- 慢SQL优化五步法(EXPLAIN/索引/SQL改写/分页/异步)
+- GC调优目标(停顿时间<100ms/吞吐量>99%权衡)
+- Linux系统参数调优(tcp_max_syn_backlog/somaxconn/file-max)
+- 预热(Warmup)策略(JIT预编译/缓存预加载/连接池预建)
+- JVM启动参数调优(-XX:MaxGCPauseMillis/-XX:G1HeapRegionSize)
+- 压测方法论(梯度加压/稳定性测试/峰值测试)
+- 容器资源限制对JVM的影响(UseContainerSupport参数)
+- 多级缓存(L1 Caffeine + L2 Redis)一致性维护
+- 可重复读(RR)事务开始时生成ReadView
+- MySQL隔离级别(RU/RC/RR/Serializable)实现机制
+- 读已提交(RC)每次读生成新ReadView
+- 幻读产生场景与Next-Key Lock防幻读
+- 顺序一致性(Sequential Consistency)与线性一致性差异
+- Serializable序列化隔离级别性能代价
+- 最终一致性(Eventual Consistency)收敛条件
+- 分布式系统线性一致性(Linearizability)定义
+- 会话一致性(Session Consistency)单客户端保证
+- 因果一致性(Causal Consistency)偏序关系
+- GraphQL N+1查询问题与DataLoader批处理
+- 性能基准测试(JMH微基准/Gatling场景压测)
+- OpenAPI 3.0规范与代码生成
+- API版本管理策略(URL版本/Header版本/参数版本)
+- GraphQL订阅(Subscription)WebSocket实现
+- RESTful资源设计与HTTP动词语义
+- REST HATEOAS超媒体约束
+- AsyncAPI规范描述事件驱动接口
+- Webhook事件签名验证(HMAC-SHA256)
+- API幂等性设计(幂等Key+去重表)
+- 服务网格东西向流量(服务间)vs API网关南北向流量(外部进入)职责划分
+- Flink Checkpoint机制(Chandy-Lamport分布式快照)
+- API网关熔断降级(Circuit Breaker模式)
+- Flink Watermark生成策略(有序/乱序/自定义)
+- Flink窗口触发器(EventTime/ProcessingTime/Count)
+- Flink Savepoint手动触发快照与作业迁移
+- Flink时间语义(事件时间/处理时间/摄入时间)
+- Flink CDC实时同步(Debezium嵌入引擎)
+- Flink反压机制(Credit-Based流控)
+- 数据湖(Iceberg/Hudi/Delta Lake)表格式对比
+- Spark RDD宽依赖与窄依赖(Stage划分边界)
+- Spark Shuffle机制(Sort-Based Shuffle)
+- Iceberg分区演进与隐式分区
+- Spark AQE自适应查询执行(动态分区合并)
+- Spark Delta Lake ACID事务与时间旅行
+- Flink状态后端(HashMapStateBackend/RocksDBStateBackend)
+- CDC(Change Data Capture)Debezium日志解析原理
+- Maven依赖仲裁(最短路径/最先声明原则)
+- 数据血缘(Data Lineage)追踪与Apache Atlas
+- Docker多阶段构建镜像瘦身策略
+- Feature Flag(功能开关)灰度发布控制
+- Maven BOM(Bill of Materials)统一版本管理
+- 代码圈复杂度与认知复杂度度量
+- Helm Chart模板化与values.yaml参数化
