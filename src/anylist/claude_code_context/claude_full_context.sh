@@ -23,7 +23,8 @@ echo
 cat "$LATEST" | jq -r '
 def format_timestamp:
   if .timestamp then
-    "[" + (.timestamp[0:19] | gsub("T";" ")) + "]"
+    # 解析ISO时间戳并转换为北京时间（UTC+8）
+    .timestamp | sub("\\.\\d+Z$"; "Z") | fromdateiso8601 | (. + 28800) | strftime("[%Y-%m-%d %H:%M:%S]")
   else
     "[未知时间]"
   end;

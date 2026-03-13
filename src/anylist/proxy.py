@@ -92,6 +92,61 @@ class AppLogger:
 
 http_client: httpx.AsyncClient | None = None
 
+def is_title_generation(body: dict) -> bool:
+    """
+    识别两种标题生成请求：
+    1. 会话结束时的 "Please write a 5-10 word title..." (user message)
+    2. 每轮对话后的话题检测 "Analyze if this message indicates a new conversation topic" (system)
+    """
+    try:
+        # ── 模式一：检查 user message 内容 ──────────
+        messages = body.get("messages", [])
+        if len(messages) == 1:
+            content = messages[0].get("content", "")
+            text = content if isinstance(content, str) else (
+                next((b.get("text", "") for b in content
+                      if isinstance(b, dict) and b.get("type") == "text"), "")
+            )
+            if "Please write a 5-10 word title" in text:
+                return True
+
+        # ── 模式二：检查 system prompt 内容 ─────────
+        system = body.get("system", [])
+        for block in system:
+            if isinstance(block, dict) and block.get("type") == "text":
+                if "Analyze if this message indicates a new conversation topic" in block.get("text", ""):
+                    return True
+
+        return False
+    except Exception:
+        return False
+
+def make_title_mock(body: dict) -> dict:
+    """根据请求类型返回对应的 mock 响应"""
+    system = body.get("system", [])
+    is_topic_detection = any(
+        "Analyze if this message indicates a new conversation topic" in b.get("text", "")
+        for b in system if isinstance(b, dict)
+    )
+
+    if is_topic_detection:
+        # 模式二：返回"不是新话题"，不触发标题更新
+        reply_text = '{"isNewTopic": false, "title": null}'
+    else:
+        # 模式一：返回一个固定标题
+        reply_text = "New Conversation"
+
+    return {
+        "id": f"mock_title_{datetime.now().strftime('%Y%m%d%H%M%S')}",
+        "type": "message",
+        "role": "assistant",
+        "content": [{"type": "text", "text": reply_text}],
+        "model": body.get("model", "mock"),
+        "stop_reason": "end_turn",
+        "stop_sequence": None,
+        "usage": {"input_tokens": 0, "output_tokens": 0},
+    }
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -128,6 +183,20 @@ def build_upstream_headers(request: Request) -> dict:
 @app.post("/v1/messages")
 async def proxy_messages(request: Request):
     body_bytes = await request.body()
+    try:
+        body = json.loads(body_bytes)
+    except Exception:
+        body = {}
+
+    # ── 拦截标题生成请求，直接 mock 返回 ──────────
+    if is_title_generation(body):
+        # await logger.log("⚡ 拦截标题生成请求，mock 返回")
+        return Response(
+            content=json.dumps(make_title_mock(body)).encode(),
+            status_code=200,
+            headers={"content-type": "application/json"},
+        )
+
     round_num = await logger.increment_round()
 
     # ── 解析并记录请求 ──────────────────────────
