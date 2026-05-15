@@ -3,3 +3,6 @@
 src/.DS_Store/
 .claude/
 .env
+.idea/
+.git/
+venv/
