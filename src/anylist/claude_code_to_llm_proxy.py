@@ -4,8 +4,12 @@ import httpx
 import asyncio
 from datetime import datetime
 from contextlib import asynccontextmanager
+from pathlib import Path
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from starlette.responses import Response
+
+load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
 
 # ──────────────────────────────────────────────
 # 配置区 —— 按需修改
