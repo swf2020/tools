@@ -270,10 +270,9 @@ gRPC 的连接多路复用和负载均衡机制为构建高性能分布式系统
 3. **资源约束**：客户端连接管理能力
 4. **运维复杂度**：监控和调试需求
 
-建议在开发和生产环境中充分测试不同配置，监控连接状态和性能指标，根据实际业务需求调整负载均衡策略。
-
 ## 附录：相关资源
 - [gRPC 官方负载均衡文档](https://grpc.io/docs/guides/load-balancing/)
 - [gRPC 服务配置规范](https://github.com/grpc/grpc/blob/master/doc/service_config.md)
 - [HTTP/2 协议规范](https://httpwg.org/specs/rfc7540.html)
 - [各语言 gRPC 实现差异](https://grpc.io/docs/languages/)
+> 如有纰漏或者错误，欢迎指正。

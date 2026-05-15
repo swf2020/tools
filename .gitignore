@@ -1,1 +1,4 @@
 .gitnexus
+.DS_Store/
+src/.DS_Store/
+.claude/
