@@ -1,6 +1,7 @@
 .gitnexus
-.DS_Store/
-src/.DS_Store/
+.DS_Store
+src/.DS_Store
+src/anylist/claude_code_context/.DS_Store
 .claude/
 .env
 .idea/
