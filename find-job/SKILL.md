@@ -5,6 +5,7 @@ description: >
   当用户提到「找工作」「招聘」「岗位」「求职」「投简历」「看机会」「职位」
   「搜索职位」「招聘网站」等关键词，或明确要求从招聘网站搜索岗位时触发本 skill。
   支持按岗位名、城市、薪资范围、经验要求组合条件搜索。
+compatibility: needs web-access, dispatching-parallel-agents
 ---
 
 # find-job — 中国招聘网站岗位聚合搜索
@@ -48,6 +49,8 @@ description: >
 │  子 Agent 必须先读取 references/sites.json        │
 │  获取对应站点的 API/URL 模式和已知陷阱              │
 │  优先 CDP 浏览器模式（绕过反爬，携带登录态）        │
+│  每站结果保存到 output/YYYY-MM-DD_HHmmss-{site}_results.json │
+│  全部合并后写入 output/YYYY-MM-DD_HHmmss-all_raw.json │
 └───────────────────────────────────────────────┘
         │
         ▼
@@ -56,6 +59,7 @@ description: >
 │  - 公司名归一化（简称→全称）        │
 │  - 岗位名模糊去重（Jaccard + 编辑距离） │
 │  - 按发布时间/匹配度排序            │
+│  - 输出到 output/YYYY-MM-DD_HHmmss-deduped.json │
 └───────────────────────────────────┘
         │
         ▼
@@ -63,7 +67,8 @@ description: >
 │  scripts/format_output.py 生成 MD： │
 │  - 汇总表格（公司、岗位、薪资、链接） │
 │  - 按来源站点分组                   │
-│  - 保存到 output/YYYY-MM-DD-关键词.md │
+│  - 入参：output/YYYY-MM-DD_HHmmss-deduped.json │
+│  - 保存到 output/YYYY-MM-DD_HHmmss-关键词.md │
 └───────────────────────────────────┘
 ```
 
@@ -100,11 +105,12 @@ description: >
 如有 site-patterns/{{SITE_ID}}.md 也一并读取。
 
 **采集要求：**
-- 每个岗位提取完整字段（见 job_schema.md）
+- 每个岗位提取完整字段（见 references/job_schema.md）
 - 记录来源网站和原始链接
 - 仅提取近 90 天内发布的岗位& 30 天招聘方活跃的岗位
 - 标注是否为猎头/外包发布
 - 提取公司规模（scale）和行业（industry）字段（API 有返回则必须采集）
+- 完成后将 JSON 数组写入 `output/YYYY-MM-DD_HHmmss-{{SITE_ID}}_results.json`（时间戳取当前时刻）
 
 **输出格式：**
 返回严格 JSON 数组，每元素包含：
@@ -117,7 +123,7 @@ description: >
   "experience": "经验要求",
   "degree": "学历要求",
   "skills": ["标签1","标签2"],
-  "description": "职位描述前200字",
+  "description": "职位描述前1000字",
   "publish_date": "YYYY-MM-DD",
   "source": "{{SITE_ID}}",
   "url": "原始链接",
@@ -130,7 +136,15 @@ description: >
 ## 输出报告格式
 
 ### 文件路径
-`output/{日期}-{关键词}.md`
+
+所有输出文件统一使用秒级时间戳命名，防止覆盖：
+
+- 单站原始结果：`output/YYYY-MM-DD_HHmmss-{site}_results.json`
+- 合并原始结果：`output/YYYY-MM-DD_HHmmss-all_raw.json`
+- 去重后结果：`output/YYYY-MM-DD_HHmmss-deduped.json`
+- 最终报告：`output/YYYY-MM-DD_HHmmss-{关键词}.md`
+
+时间戳格式：`YYYY-MM-DD_HHmmss`（如 `2026-05-16_094730`）
 
 ### 报告模板
 
@@ -207,3 +221,5 @@ description: >
 - CDP curl 命令必须加 `--noproxy '*'` 避免 localhost 请求走代理
 - BOSS直聘薪资为 PUA 字体加密，必须通过 API 获取 salaryDesc 明文
 - 不采集付费内容
+- 单个子 Agent 超时 120 秒，超时标记为「采集超时」
+- 单站搜索失败自动重试最多 2 次（每次间隔 5 秒），2 次均失败再标记「采集失败」

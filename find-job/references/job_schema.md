@@ -15,7 +15,7 @@
 | `experience` | string | 是 | 经验要求，如 "3-5年" |
 | `degree` | string | 否 | 学历要求 |
 | `skills` | list[string] | 否 | 技能标签 |
-| `description` | string | 否 | 职位描述前 200 字摘要 |
+| `description` | string | 否 | 职位描述前 1000 字摘要 |
 | `welfare` | list[string] | 否 | 福利列表 |
 | `industry` | string | 否 | 公司行业 |
 | `stage` | string | 否 | 融资阶段 |
