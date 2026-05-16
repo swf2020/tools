@@ -93,17 +93,37 @@
       "category": "high_end",
       "anti_scraping": "medium",
       "login_required": false,
-      "search_url": "https://www.liepin.com/zhaopin/?key={keyword}&dqs={cityCode}",
+      "search_url": "https://www.liepin.com/zhaopin/?key={keyword}&dqs={cityCode}&currentPage={page}&pageSize=40",
       "api_endpoint": "",
-      "api_params": {},
+      "city_codes": {
+        "北京": "010000",
+        "上海": "020000",
+        "广州": "050020",
+        "深圳": "050090",
+        "杭州": "070200",
+        "成都": "280200",
+        "南京": "060000",
+        "武汉": "170200",
+        "西安": "270200",
+        "苏州": "060400"
+      },
       "known_pitfalls": [
-        "搜索结果页为动态渲染，需 CDP 浏览器模式",
-        "可能有验证码风控"
+        "SPA 动态渲染，WebFetch/curl 无法获取职位数据，必须用 CDP 浏览器",
+        "CSS 类名使用动态前缀（如 _40108）+ 固定后缀，前缀随版本迭代变化，务必用 [class*=\"suffix\"] 属性选择器",
+        "Shell 转义问题：curl POST JS 到 CDP /eval 时单引号/方括号易被解析，建议 JS 写入临时文件后 --data-binary @file 发送",
+        "部分猎头职位隐藏真实公司名（显示「某深圳互联网上市公司」等），需进入详情页确认",
+        "搜索结果页底部有登录弹窗，但数据已在 DOM 中，直接提取即可无需交互"
       ],
       "effective_patterns": [
-        "CDP 浏览器打开搜索页，滚动加载后提取 DOM 内容"
+        "CDP 浏览器模式：创建 new tab 打开搜索 URL，等待 ready: complete 后 eval 提取 DOM",
+        "职位卡片容器选择器 .job-card-pc-container（稳定无动态前缀）",
+        "职位详情链接 a[data-nick=\"job-detail-job-info\"]",
+        "薪资 [class*=\"E8PWS\"]，经验/学历 [class*=\"hJbMl\"]（第1个=经验，第2个=学历），公司名 [class*=\"K6Y1c\"]",
+        "工作地点可从标题 text 正则 /【(.+?)】/ 提取更可靠",
+        "搜索 URL 参数：key=关键词, dqs=城市编码, currentPage=0(0-indexed), pageSize=40, pubTime=天数, salaryCode=编码",
+        "翻页：修改 URL currentPage 参数即可，分页器可获取总页数"
       ],
-      "site_pattern_ref": null
+      "site_pattern_ref": "site-patterns/liepin.com.md"
     },
     {
       "id": "51job",
@@ -113,15 +133,30 @@
       "category": "general",
       "anti_scraping": "medium",
       "login_required": false,
-      "search_url": "https://search.51job.com/list/000000,000000,0000,00,9,99,{keyword},2,1.html",
+      "search_url": "https://search.51job.com/list/{cityCode},000000,0000,00,9,99,{keyword},2,1.html",
       "api_endpoint": "",
+      "city_codes": {
+        "北京": "010000",
+        "上海": "020000",
+        "广州": "030200",
+        "深圳": "040000",
+        "杭州": "080200",
+        "成都": "090200",
+        "南京": "070200",
+        "武汉": "180200",
+        "西安": "200200",
+        "苏州": "070400"
+      },
       "known_pitfalls": [
-        "PC 端搜索结果有分页限制，需注意翻页频率"
+        "PC 端搜索结果有分页限制，需注意翻页频率",
+        "城市编码在 area_array_c.js 中定义，编码为自定义 6 位数字，非国标行政区划代码"
       ],
       "effective_patterns": [
-        "WebSearch 可发现部分岗位链接，CDP 获取详情"
+        "WebSearch 可发现部分岗位链接，CDP 获取详情",
+        "搜索 URL 第一个参数为城市编码，第二个为职能编码（000000=不限）",
+        "URL 末尾参数 2,1.html 中 2 代表搜索模式，1 代表第 1 页"
       ],
-      "site_pattern_ref": null
+      "site_pattern_ref": "site-patterns/51job.com.md"
     },
     {
       "id": "zhaopin",
@@ -129,15 +164,35 @@
       "domain": "zhaopin.com",
       "priority": 4,
       "category": "general",
-      "anti_scraping": "medium",
+      "anti_scraping": "low",
       "login_required": false,
-      "search_url": "https://sou.zhaopin.com/?kw={keyword}&city={cityCode}",
+      "search_url": "https://www.zhaopin.com/sou/jl765/kw{kw}/p1?sl={salaryMin},{salaryMax}&el={experience}&we={degree}&et={edu}",
       "api_endpoint": "",
+      "city_codes": {
+        "北京": "jl530",
+        "上海": "jl538",
+        "广州": "jl763",
+        "深圳": "jl765",
+        "杭州": "jl653",
+        "成都": "jl801",
+        "南京": "jl635",
+        "武汉": "jl738",
+        "西安": "jl854",
+        "苏州": "jl585"
+      },
+      "city_codes_note": "智联城市编码为内部数字 ID(jlXXX)，非国标代码，建议在搜索页验证后再使用",
       "known_pitfalls": [
-        "需 CDP 浏览器模式获取完整内容"
+        "关键词 kw 为站内编码格式，非明文 CGI 参数，需从站内搜索入口获取编码后的 URL",
+        "部分职位标注「代招」「外包」，需过滤或标记",
+        "薪资单位为「元/月」，需转换为 K 单位（如 40000-60000 → 40-60K）"
       ],
-      "effective_patterns": [],
-      "site_pattern_ref": null
+      "effective_patterns": [
+        "WebFetch 可直接抓取搜索结果页，无需 CDP 浏览器",
+        "URL 中 pN 翻页，sl=min,max 为薪资范围（元），el 为学历，we 为经验，et 为招聘类型",
+        "单页约 17 条结果，分页遍历可覆盖全量",
+        "字段齐全：公司、薪资、地点、经验、学历、技能标签均可在搜索结果页获取"
+      ],
+      "site_pattern_ref": "site-patterns/zhaopin.com.md"
     },
     {
       "id": "lagou",
@@ -147,16 +202,22 @@
       "category": "tech",
       "anti_scraping": "high",
       "login_required": false,
-      "search_url": "https://www.lagou.com/wn/jobs?kd={keyword}&city={city}",
+      "search_url": "https://www.lagou.com/wn/jobs?kd={keyword}&city={city}&pn={page}&fromSearch=true",
       "api_endpoint": "",
       "known_pitfalls": [
-        "反爬严格，IP 频率限制",
-        "搜索结果有限，详情页需登录限制增多"
+        "阿里云 WAF 保护，WebFetch/curl 静态层返回验证页面，必须用 CDP 浏览器模式",
+        "职位卡片无 <a href> 链接（事件委托），无法直接提取详情页 URL",
+        "页面内 a#openWinPostion 点击打开侧边栏弹窗，不是导航到详情页",
+        "导航时 URL 参数过多可能被截断，建议用简洁参数"
       ],
       "effective_patterns": [
-        "CDP 浏览器模式，控制请求频率"
+        "CDP 浏览器模式：先打开搜索页，eval 提取 __NEXT_DATA__ JSON（SSR 数据在 script#__NEXT_DATA__ 中）",
+        "数据结构：props.pageProps.initData.content.positionResult.result[]，含 positionId/positionName/companyFullName/salary/workYear/education/skillLables 等",
+        "职位详情页直接 navigate 到 /wn/jobs/{positionId}.html 获取完整 JD",
+        "分页：URL 参数 pn=N，每页 15 条，totalCount 在 positionResult.totalCount 中",
+        "搜索 URL 建议用简洁参数：/wn/jobs?kd=...&pn=N"
       ],
-      "site_pattern_ref": null
+      "site_pattern_ref": "site-patterns/lagou.com.md"
     },
     {
       "id": "maimai",
