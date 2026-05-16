@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gitnexus": {
+      "command": "python3",
+      "args": ["/Users/sunwenfei/Desktop/workspace/tools/src/anylist/claude_code_to_mcp_server_proxy.py"]
+    }
+  }
+}

@@ -1,0 +1,842 @@
+npx ccusage@latest session --id {sessionId} --json
+
+走gitnexus-mcp
+{
+  "sessionId": "4bd3270f-d60c-4751-bbb6-8a6eeb92d988",
+  "totalCost": 0,
+  "totalTokens": 736656,
+  "entries": [
+    {
+      "timestamp": "2026-03-15T09:52:00.889Z",
+      "inputTokens": 23271,
+      "outputTokens": 103,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:18.866Z",
+      "inputTokens": 23469,
+      "outputTokens": 100,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:50.893Z",
+      "inputTokens": 23620,
+      "outputTokens": 89,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:07.510Z",
+      "inputTokens": 24273,
+      "outputTokens": 100,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:19.902Z",
+      "inputTokens": 24627,
+      "outputTokens": 55,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:26.172Z",
+      "inputTokens": 24705,
+      "outputTokens": 55,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:41.250Z",
+      "inputTokens": 24783,
+      "outputTokens": 84,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:12.703Z",
+      "inputTokens": 25160,
+      "outputTokens": 172,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:44.682Z",
+      "inputTokens": 25176,
+      "outputTokens": 77,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:51.678Z",
+      "inputTokens": 25547,
+      "outputTokens": 86,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:00.889Z",
+      "inputTokens": 23271,
+      "outputTokens": 103,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:00.889Z",
+      "inputTokens": 23271,
+      "outputTokens": 103,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:18.866Z",
+      "inputTokens": 23469,
+      "outputTokens": 100,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:18.866Z",
+      "inputTokens": 23469,
+      "outputTokens": 100,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:50.893Z",
+      "inputTokens": 23620,
+      "outputTokens": 89,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:52:50.893Z",
+      "inputTokens": 23620,
+      "outputTokens": 89,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:07.510Z",
+      "inputTokens": 24273,
+      "outputTokens": 100,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:07.510Z",
+      "inputTokens": 24273,
+      "outputTokens": 100,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:19.902Z",
+      "inputTokens": 24627,
+      "outputTokens": 55,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:19.902Z",
+      "inputTokens": 24627,
+      "outputTokens": 55,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:26.172Z",
+      "inputTokens": 24705,
+      "outputTokens": 55,
+      "cacheCreationTokens": 0,
+ 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:26.172Z",
+      "inputTokens": 24705,
+      "outputTokens": 55,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:41.250Z",
+      "inputTokens": 24783,
+      "outputTokens": 84,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:53:41.250Z",
+      "inputTokens": 24783,
+      "outputTokens": 84,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:12.703Z",
+      "inputTokens": 25160,
+      "outputTokens": 172,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:12.703Z",
+      "inputTokens": 25160,
+      "outputTokens": 172,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:44.682Z",
+      "inputTokens": 25176,
+      "outputTokens": 77,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:44.682Z",
+      "inputTokens": 25176,
+      "outputTokens": 77,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:51.678Z",
+      "inputTokens": 25547,
+      "outputTokens": 86,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T09:54:51.678Z",
+      "inputTokens": 25547,
+      "outputTokens": 86,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:12:16.620Z",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "<synthetic>",
+      "costUSD": 0
+    }
+  ]
+}
+
+
+{
+  "sessionId": "23e02b14-1cfa-4422-bffd-79bdb589b2d9",
+  "totalCost": 0,
+  "totalTokens": 690648,
+  "entries": [
+    {
+      "timestamp": "2026-03-15T14:10:14.463Z",
+      "inputTokens": 20044,
+      "outputTokens": 80,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:10:27.094Z",
+      "inputTokens": 21721,
+      "outputTokens": 61,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:11:52.239Z",
+      "inputTokens": 21689,
+      "outputTokens": 70,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:12:04.036Z",
+      "inputTokens": 22449,
+      "outputTokens": 101,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:12:22.881Z",
+      "inputTokens": 23512,
+      "outputTokens": 141,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:12:37.675Z",
+      "inputTokens": 23687,
+      "outputTokens": 141,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:12:55.235Z",
+      "inputTokens": 23892,
+      "outputTokens": 81,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:13:02.605Z",
+      "inputTokens": 24886,
+      "outputTokens": 57,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:14:03.882Z",
+      "inputTokens": 24950,
+      "outputTokens": 22,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:14:45.793Z",
+      "inputTokens": 24979,
+      "outputTokens": 110,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:14:53.165Z",
+      "inputTokens": 25132,
+      "outputTokens": 64,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:15:03.087Z",
+      "inputTokens": 25325,
+      "outputTokens": 79,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:15:11.697Z",
+      "inputTokens": 27217,
+      "outputTokens": 69,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:15:27.513Z",
+      "inputTokens": 27451,
+      "outputTokens": 77,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:15:48.603Z",
+      "inputTokens": 27814,
+      "outputTokens": 222,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:16:29.256Z",
+      "inputTokens": 28017,
+      "outputTokens": 115,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:16:58.141Z",
+      "inputTokens": 28302,
+      "outputTokens": 103,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:17:27.216Z",
+      "inputTokens": 28484,
+      "outputTokens": 92,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:17:35.297Z",
+      "inputTokens": 28760,
+      "outputTokens": 111,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:17:50.257Z",
+      "inputTokens": 29058,
+      "outputTokens": 115,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:17:58.266Z",
+      "inputTokens": 29329,
+      "outputTokens": 109,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:18:06.315Z",
+      "inputTokens": 29702,
+      "outputTokens": 111,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:18:13.089Z",
+      "inputTokens": 29985,
+      "outputTokens": 101,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:18:22.315Z",
+      "inputTokens": 30259,
+      "outputTokens": 109,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:18:28.287Z",
+      "inputTokens": 30549,
+      "outputTokens": 74,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:18:45.443Z",
+      "inputTokens": 30913,
+      "outputTokens": 127,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    }
+  ]
+}
+
+
+{
+  "sessionId": "763d3ea6-fe5e-4f68-b4c3-48902c8d22a5",
+  "totalCost": 0,
+  "totalTokens": 514912,
+  "entries": [
+    {
+      "timestamp": "2026-03-15T14:34:11.180Z",
+      "inputTokens": 20043,
+      "outputTokens": 154,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:34:23.675Z",
+      "inputTokens": 20245,
+      "outputTokens": 42,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:34:47.406Z",
+      "inputTokens": 20948,
+      "outputTokens": 52,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:35:38.363Z",
+      "inputTokens": 21012,
+      "outputTokens": 190,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:35:48.938Z",
+      "inputTokens": 21245,
+      "outputTokens": 75,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:03.088Z",
+      "inputTokens": 21333,
+      "outputTokens": 40,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:07.396Z",
+      "inputTokens": 21397,
+      "outputTokens": 33,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:16.707Z",
+      "inputTokens": 21454,
+      "outputTokens": 44,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:25.495Z",
+      "inputTokens": 21511,
+      "outputTokens": 57,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:32.171Z",
+      "inputTokens": 21585,
+      "outputTokens": 39,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:43.181Z",
+      "inputTokens": 21651,
+      "outputTokens": 37,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:36:58.468Z",
+      "inputTokens": 21974,
+      "outputTokens": 94,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:37:03.942Z",
+      "inputTokens": 23315,
+      "outputTokens": 48,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:37:16.883Z",
+      "inputTokens": 23942,
+      "outputTokens": 198,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:37:25.252Z",
+      "inputTokens": 24183,
+      "outputTokens": 42,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:37:50.205Z",
+      "inputTokens": 24836,
+      "outputTokens": 268,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:38:02.090Z",
+      "inputTokens": 25147,
+      "outputTokens": 213,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:38:46.095Z",
+      "inputTokens": 25530,
+      "outputTokens": 827,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:39:14.359Z",
+      "inputTokens": 27129,
+      "outputTokens": 184,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:39:36.779Z",
+      "inputTokens": 27541,
+      "outputTokens": 43,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:39:50.060Z",
+      "inputTokens": 27874,
+      "outputTokens": 148,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T14:40:00.421Z",
+      "inputTokens": 28061,
+      "outputTokens": 128,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    }
+  ]
+}
+
+==============
+走内置工具glob&grep&update
+npx ccusage@latest session --id {sessionId} --json
+
+
+{
+  "sessionId": "310dd906-17c1-4026-9782-b46956884589",
+  "totalCost": 0,
+  "totalTokens": 230291,
+  "entries": [
+    {
+      "timestamp": "2026-03-15T13:44:46.379Z",
+      "inputTokens": 20035,
+      "outputTokens": 119,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:45:06.581Z",
+      "inputTokens": 20208,
+      "outputTokens": 57,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:45:12.718Z",
+      "inputTokens": 20295,
+      "outputTokens": 58,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:45:20.123Z",
+      "inputTokens": 22048,
+      "outputTokens": 41,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:45:29.261Z",
+      "inputTokens": 23333,
+      "outputTokens": 41,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:45:57.983Z",
+      "inputTokens": 23949,
+      "outputTokens": 230,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:46:12.507Z",
+      "inputTokens": 24361,
+      "outputTokens": 333,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:46:23.629Z",
+      "inputTokens": 24860,
+      "outputTokens": 78,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:46:29.500Z",
+      "inputTokens": 24990,
+      "outputTokens": 78,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    },
+    {
+      "timestamp": "2026-03-15T13:46:35.437Z",
+      "inputTokens": 25120,
+      "outputTokens": 57,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "model": "qwen3-max-2026-01-23",
+      "costUSD": 0
+    }
+  ]
+}
