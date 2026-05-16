@@ -1,0 +1,250 @@
+{
+  "sites": [
+    {
+      "id": "zhipin",
+      "name": "BOSS直聘",
+      "domain": "zhipin.com",
+      "priority": 1,
+      "category": "tech",
+      "anti_scraping": "high",
+      "login_required": false,
+      "search_url": "https://www.zhipin.com/web/geek/jobs?city={cityCode}&jobType={jobType}&salary={salary}&experience={experience}&query={keyword}",
+      "api_endpoint": "https://www.zhipin.com/wapi/zpgeek/search/joblist.json",
+      "api_params": {
+        "scene": "1",
+        "query": "{keyword}",
+        "city": "{cityCode}",
+        "experience": "{exp}",
+        "jobType": "{jobType}",
+        "salary": "{salary}",
+        "page": "{page}",
+        "pageSize": "10"
+      },
+      "city_codes": {
+        "北京": "101010100",
+        "上海": "101020100",
+        "广州": "101280100",
+        "深圳": "101280600",
+        "杭州": "101210100",
+        "成都": "101270100",
+        "南京": "101190100",
+        "武汉": "101200100",
+        "西安": "101110100",
+        "苏州": "101190400"
+      },
+      "salary_codes": {
+        "不限": "0",
+        "10-20K": "404",
+        "20-35K": "405",
+        "35-50K": "406",
+        "50K+": "407"
+      },
+      "experience_codes": {
+        "应届生": "103",
+        "1-3年": "104",
+        "3-5年": "105",
+        "5-10年": "106",
+        "10年以上": "107"
+      },
+      "response_mapping": {
+        "list_path": "zpData.jobList[]",
+        "total_path": "zpData.resCount",
+        "has_more_path": "zpData.hasMore",
+        "fields": {
+          "title": "jobName",
+          "salary_plaintext": "salaryDesc",
+          "company": "brandName",
+          "industry": "brandIndustry",
+          "stage": "brandStageName",
+          "scale": "brandScaleName",
+          "experience": "jobExperience",
+          "degree": "jobDegree",
+          "city": "cityName",
+          "district": "areaDistrict",
+          "business_district": "businessDistrict",
+          "skills": "skills",
+          "welfare": "welfareList",
+          "is_headhunter": "proxyJob",
+          "encrypt_job_id": "encryptJobId",
+          "url_template": "https://www.zhipin.com/job_detail/{encryptJobId}.html"
+        }
+      },
+      "known_pitfalls": [
+        "DOM 薪资 PUA 字体加密（U+E031-U+E038），textContent 为乱码，必须用 API 的 salaryDesc 字段",
+        "CDP curl 需加 --noproxy '*' 避免 http_proxy 干扰返回 502",
+        "API URL 多参数时 /new 可能截断只保留第一个参数，建议 navigate 到完整 URL 或用 eval 执行 fetch",
+        "搜索为宽泛匹配，需额外对结果做关键词二次过滤",
+        "proxyJob=1 为猎头发布，公司名显示「某XXX公司」，真实公司信息隐藏",
+        "brandLogo 在猎头岗位为默认占位图"
+      ],
+      "effective_patterns": [
+        "CDP 先打开搜索页获取 Cookie → navigate 到 API 端点 → eval 提取 body.innerText",
+        "在 CDP 页面内用 eval 执行 fetch() 直接调用 API，绕过代理参数截断",
+        "多页通过 page 参数翻页，控制频率避免风控",
+        "多条件组合可并行子 Agent 各自在自己的 CDP tab 中操作"
+      ],
+      "site_pattern_ref": "site-patterns/zhipin.com.md"
+    },
+    {
+      "id": "liepin",
+      "name": "猎聘",
+      "domain": "liepin.com",
+      "priority": 2,
+      "category": "high_end",
+      "anti_scraping": "medium",
+      "login_required": false,
+      "search_url": "https://www.liepin.com/zhaopin/?key={keyword}&dqs={cityCode}",
+      "api_endpoint": "",
+      "api_params": {},
+      "known_pitfalls": [
+        "搜索结果页为动态渲染，需 CDP 浏览器模式",
+        "可能有验证码风控"
+      ],
+      "effective_patterns": [
+        "CDP 浏览器打开搜索页，滚动加载后提取 DOM 内容"
+      ],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "51job",
+      "name": "前程无忧",
+      "domain": "51job.com",
+      "priority": 3,
+      "category": "general",
+      "anti_scraping": "medium",
+      "login_required": false,
+      "search_url": "https://search.51job.com/list/000000,000000,0000,00,9,99,{keyword},2,1.html",
+      "api_endpoint": "",
+      "known_pitfalls": [
+        "PC 端搜索结果有分页限制，需注意翻页频率"
+      ],
+      "effective_patterns": [
+        "WebSearch 可发现部分岗位链接，CDP 获取详情"
+      ],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "zhaopin",
+      "name": "智联招聘",
+      "domain": "zhaopin.com",
+      "priority": 4,
+      "category": "general",
+      "anti_scraping": "medium",
+      "login_required": false,
+      "search_url": "https://sou.zhaopin.com/?kw={keyword}&city={cityCode}",
+      "api_endpoint": "",
+      "known_pitfalls": [
+        "需 CDP 浏览器模式获取完整内容"
+      ],
+      "effective_patterns": [],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "lagou",
+      "name": "拉勾",
+      "domain": "lagou.com",
+      "priority": 5,
+      "category": "tech",
+      "anti_scraping": "high",
+      "login_required": false,
+      "search_url": "https://www.lagou.com/wn/jobs?kd={keyword}&city={city}",
+      "api_endpoint": "",
+      "known_pitfalls": [
+        "反爬严格，IP 频率限制",
+        "搜索结果有限，详情页需登录限制增多"
+      ],
+      "effective_patterns": [
+        "CDP 浏览器模式，控制请求频率"
+      ],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "maimai",
+      "name": "脉脉",
+      "domain": "maimai.cn",
+      "priority": 6,
+      "category": "social",
+      "anti_scraping": "high",
+      "login_required": true,
+      "search_url": "https://maimai.cn/web/search?query={keyword}&type=job",
+      "api_endpoint": "",
+      "known_pitfalls": [
+        "必须登录后才能搜索",
+        "反爬严格，需要 CDP 浏览器 + 真实用户 Cookie",
+        "搜索结果可能有限制翻页"
+      ],
+      "effective_patterns": [
+        "CDP 浏览器模式，利用用户已登录态"
+      ],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "58",
+      "name": "58同城招聘",
+      "domain": "58.com",
+      "priority": 7,
+      "category": "service",
+      "anti_scraping": "low",
+      "login_required": false,
+      "search_url": "https://{city}.58.com/job/?key={keyword}",
+      "api_endpoint": "",
+      "known_pitfalls": [],
+      "effective_patterns": [
+        "WebFetch 可获取部分结果，CDP 获取完整列表"
+      ],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "ganji",
+      "name": "赶集网直聘",
+      "domain": "ganji.com",
+      "priority": 8,
+      "category": "service",
+      "anti_scraping": "low",
+      "login_required": false,
+      "search_url": "https://{city}.ganji.com/zhaopin/{keyword}/",
+      "api_endpoint": "",
+      "known_pitfalls": [],
+      "effective_patterns": [],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "chinahr",
+      "name": "中华英才网",
+      "domain": "chinahr.com",
+      "priority": 9,
+      "category": "general",
+      "anti_scraping": "low",
+      "login_required": false,
+      "search_url": "https://www.chinahr.com/search/?keyword={keyword}&city={city}",
+      "api_endpoint": "",
+      "known_pitfalls": [
+        "被 58 收购后流量下降，岗位量较少"
+      ],
+      "effective_patterns": [],
+      "site_pattern_ref": null
+    },
+    {
+      "id": "dajie",
+      "name": "大街网",
+      "domain": "dajie.com",
+      "priority": 10,
+      "category": "campus",
+      "anti_scraping": "medium",
+      "login_required": false,
+      "search_url": "https://www.dajie.com/search?keyword={keyword}&city={city}",
+      "api_endpoint": "",
+      "known_pitfalls": [
+        "以校园招聘为主，社招岗位有限"
+      ],
+      "effective_patterns": [],
+      "site_pattern_ref": null
+    }
+  ],
+  "default_settings": {
+    "max_results_per_site": 10,
+    "max_pages": 3,
+    "date_range_days": 30,
+    "parallel": true
+  }
+}
