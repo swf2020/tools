@@ -24,3 +24,6 @@
 | `source` | string | 是 | 来源站点：zhipin/liepin/51job/... |
 | `url` | string | 是 | 岗位详情页原始链接 |
 | `is_headhunter` | bool | 是 | 是否为猎头/外包发布 |
+| `recruiter_active_time` | string | 否 | 招聘者最近活跃时间，如 "今日活跃"、"3天内活跃"、"本周活跃"、"本月活跃"、"半年前活跃" |
+| `job_requirements` | string | 否 | 岗位要求（技能/经验/学历等硬性条件），区别于岗位描述 |
+| `job_type` | string | 否 | 求职类型：社招 / 校招 / 实习 |

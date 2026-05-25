@@ -86,7 +86,88 @@ jobList.map(j => ({
 }))
 ```
 
-### 3. 获取多页结果（2026-05-11）
+### 3. 提取招聘者活跃时间（2026-05-24）
+
+API 返回两个关键字段，组合判定招聘者活跃度：
+
+```javascript
+const activeMap = {
+  // bossOnlineState: 1=当前在线, 2=近期活跃, 3=最近来过, 0=未知
+  // lastLogin: 最后登录时间字符串，如 "今日活跃"、"3天内活跃"、"本月活跃"
+}
+
+jobList.map(j => ({
+  isOnline: j.bossOnlineState === 1,       // 当前在线
+  lastLogin: j.lastLogin,                   // "今日活跃" / "3天内活跃" / "本月活跃" / "半年前活跃"
+  activeTime: j.lastLogin || (j.bossOnlineState === 1 ? "今日活跃" : "未知"),
+}))
+```
+
+**判定规则：**
+- `bossOnlineState=1` → 当天在线 → `recruiter_active_time` = "今日活跃"
+- `bossOnlineState=2` + `lastLogin` 含 "3天" → "3天内活跃"
+- `bossOnlineState=3` + `lastLogin` 含 "本月" → "本月活跃"
+- 其余情况直接取 `lastLogin` 原始值
+
+### 4. 详情页职位描述提取（2026-05-25 实测验证）
+
+**重要：搜索列表 API 不返回 `jobDescription` / `jobRequirement` 字段。**
+职位描述和任职要求仅存在于详情页 `https://www.zhipin.com/job_detail/{encryptJobId}.html` 的 DOM 中。
+
+采集流程：搜索 API 获取列表 → 逐个 navigate 到详情页 → eval 提取 `document.body.innerText` → 解析职位描述和任职要求。
+
+```javascript
+// 在详情页 eval 执行，从 body.innerText 提取描述和任职要求
+const text = document.body.innerText;
+const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+const descIdx = lines.findIndex(l => l === '职位描述');
+
+let description = '';
+let jobRequirements = '';
+
+if (descIdx !== -1) {
+  const stopKws = [
+    '公司信息', '工商信息', '工作地址', '公司介绍',
+    '职位发布者', '微信扫码', 'Boss', '相似职位',
+    '竞争力分析', '认证资质', '人力资源服务'
+  ];
+  let inRequirements = false;
+  for (let i = descIdx + 1; i < lines.length; i++) {
+    if (stopKws.some(kw => lines[i].includes(kw))) break;
+    if (lines[i] === '任职要求：' || lines[i].startsWith('任职要求')) {
+      inRequirements = true;
+      continue;
+    }
+    if (!inRequirements) {
+      description += lines[i] + '\n';
+    } else {
+      jobRequirements += lines[i] + '\n';
+    }
+  }
+}
+
+// 若详情页无数据，用列表字段合成 job_requirements 兜底
+if (!jobRequirements.trim()) {
+  jobRequirements = `经验${j.jobExperience || '不限'}，学历${j.jobDegree || '不限'}，技能：${(j.skills || []).join('、')}`;
+}
+```
+
+**详情页访问注意事项：**
+- 每次 navigate 到详情页后等待 `ready: complete`，建议间隔 2-3 秒避免风控
+- 部分详情页（猎头岗位）可能重定向或无法访问，此时仅使用列表字段
+- 描述文本建议截取前 1000 字，避免数据过大
+
+### 5. jobType 编码（2026-05-24）
+
+搜索 API 参数 `jobType` 的取值：
+
+| 编码 | 含义 |
+|------|------|
+| `1901` | 社招 |
+| `1902` | 校招 |
+| `1903` | 实习 |
+
+### 6. 获取多页结果（2026-05-11）
 
 通过 `page` 参数翻页，注意控制频率避免触发风控：
 

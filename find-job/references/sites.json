@@ -33,11 +33,28 @@
         "苏州": "101190400"
       },
       "salary_codes": {
+        "_note": "部分区间非网站标准选项，需用宽范围抓取 + 结果端数值后过滤（详见 SKILL.md 薪资范围映射策略）",
         "不限": "0",
         "10-20K": "404",
         "20-35K": "405",
+        "30-60K": "0_wide",
         "35-50K": "406",
+        "40-60K": "0_wide",
+        "30K以上": "407_wide",
+        "40K以上": "407_wide",
         "50K+": "407"
+      },
+      "salary_post_filter": {
+        "_note": "以下区间需子 Agent 解析 salaryDesc 数值后做二次过滤",
+        "30-60K": {"min": 30, "max": 60},
+        "40-60K": {"min": 40, "max": 60},
+        "30K以上": {"min": 30, "max": null},
+        "40K以上": {"min": 40, "max": null}
+      },
+      "job_type_codes": {
+        "社招": "1901",
+        "校招": "1902",
+        "实习": "1903"
       },
       "experience_codes": {
         "应届生": "103",
@@ -65,6 +82,9 @@
           "skills": "skills",
           "welfare": "welfareList",
           "is_headhunter": "proxyJob",
+          "boss_online_state": "bossOnlineState",
+          "last_login": "lastLogin",
+          "job_type_label": "jobType",
           "encrypt_job_id": "encryptJobId",
           "url_template": "https://www.zhipin.com/job_detail/{encryptJobId}.html"
         }
@@ -106,6 +126,42 @@
         "武汉": "170200",
         "西安": "270200",
         "苏州": "060400"
+      },
+      "salary_codes": {
+        "_note": "猎聘 salaryCode 标准编码需 CDP 实测验证。非标准区间标记为 wide 模式，需子 Agent 后过滤",
+        "不限": "0",
+        "10-20K": "???",
+        "20-35K": "???",
+        "30-60K": "0_wide",
+        "35-50K": "???",
+        "40-60K": "0_wide",
+        "30K以上": "max_wide",
+        "40K以上": "max_wide",
+        "50K+": "???"
+      },
+      "salary_post_filter": {
+        "_note": "以下区间需子 Agent 解析薪资数值后做二次过滤",
+        "30-60K": {"min": 30, "max": 60},
+        "40-60K": {"min": 40, "max": 60},
+        "30K以上": {"min": 30, "max": null},
+        "40K以上": {"min": 40, "max": null}
+      },
+      "experience_codes": {
+        "应届生": "0$1",
+        "1-3年": "2$3",
+        "3-5年": "4$5",
+        "5-10年": "6$7",
+        "10年以上": "8$9"
+      },
+      "search_url_params": {
+        "_note": "猎聘搜索 URL 完整参数映射",
+        "key": "关键词",
+        "dqs": "城市编码",
+        "workYearCode": "经验要求",
+        "salaryCode": "薪资范围",
+        "pubTime": "发布时间/活跃天数",
+        "currentPage": "0-indexed 页码",
+        "pageSize": "每页条数（最大40）"
       },
       "known_pitfalls": [
         "SPA 动态渲染，WebFetch/curl 无法获取职位数据，必须用 CDP 浏览器",
@@ -303,9 +359,12 @@
     }
   ],
   "default_settings": {
-    "max_results_per_site": 10,
+    "max_results_per_site": 15,
     "max_pages": 3,
     "date_range_days": 30,
-    "parallel": true
+    "recruiter_active_days": 30,
+    "job_type": "社招",
+    "parallel": true,
+    "default_sites": ["zhipin", "liepin"]
   }
 }
