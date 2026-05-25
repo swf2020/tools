@@ -66,6 +66,52 @@ def job_similarity(a: str, b: str) -> float:
     """岗位名相似度"""
     return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
+def filter_by_active_time(jobs: list, max_days: int = 30) -> list:
+    """根据招聘者活跃时间过滤：仅保留最近 max_days 天内活跃的岗位"""
+    if max_days is None or max_days <= 0:
+        return jobs
+    filtered = []
+    for j in jobs:
+        text = (j.get("recruiter_active_time") or "").strip()
+        if not text or "未知" in text:
+            filtered.append(j)  # 无数据的保留
+            continue
+        days = _parse_active_days(text)
+        if days is not None and days <= max_days:
+            filtered.append(j)
+        elif days is None:
+            filtered.append(j)  # 无法解析的保留
+    return filtered
+
+
+def _parse_active_days(text: str) -> int | None:
+    """从活跃时间文本提取天数。如 '今日活跃'→0, '3天内活跃'→3, '本周活跃'→7, '本月活跃'→30, '半年前活跃'→180"""
+    import re as _re
+    if "今日" in text or "刚刚" in text or "在线" in text:
+        return 0
+    for kw, val in [("半年", 180), ("5个月", 150), ("4个月", 120), ("3个月", 90), ("2个月", 60), ("1个月", 30), ("本月", 30), ("本周", 7)]:
+        if kw in text:
+            return val
+    m = _re.search(r"(\d+)\s*天", text)
+    if m:
+        return int(m.group(1))
+    m = _re.search(r"(\d+)\s*小时", text)
+    if m:
+        return 0
+    return None
+
+
+def split_headhunter(jobs: list) -> dict:
+    """拆分猎头和非猎头岗位，返回 {headhunter: [...], direct: [...]}"""
+    hh, direct = [], []
+    for j in jobs:
+        if j.get("is_headhunter") or j.get("proxyJob") == 1:
+            hh.append(j)
+        else:
+            direct.append(j)
+    return {"headhunter": hh, "direct": direct}
+
+
 def deduplicate(jobs: list, company_threshold: float = 0.85, title_threshold: float = 0.80) -> list:
     """去重主逻辑"""
     if not jobs:
@@ -93,9 +139,12 @@ def deduplicate(jobs: list, company_threshold: float = 0.85, title_threshold: fl
     return deduped
 
 def main():
-    parser = argparse.ArgumentParser(description="岗位去重：公司名归一化 + 岗位名模糊匹配")
+    parser = argparse.ArgumentParser(description="岗位去重：公司名归一化 + 岗位名模糊匹配 + 活跃时间过滤 + 猎头分流")
     parser.add_argument("input", nargs="?", help="输入 JSON 文件路径（缺省从 stdin 读取）")
-    parser.add_argument("-o", "--output", help="输出 JSON 文件路径（带时间戳），同时输出到 stdout")
+    parser.add_argument("-o", "--output", help="输出 JSON 文件路径（去重合并结果）")
+    parser.add_argument("--max-active-days", type=int, default=0, help="招聘者活跃天数上限（0=不过滤）")
+    parser.add_argument("--split-headhunter", action="store_true", help="输出猎头/非猎头拆分 JSON")
+    parser.add_argument("--split-output-dir", default=None, help="拆分输出目录")
     args = parser.parse_args()
 
     if args.input:
@@ -104,7 +153,16 @@ def main():
     else:
         jobs = json.load(sys.stdin)
 
+    # 活跃时间过滤
+    if args.max_active_days > 0:
+        before = len(jobs)
+        jobs = filter_by_active_time(jobs, args.max_active_days)
+        print(f"[去重] 活跃时间过滤: {before} → {len(jobs)} (max {args.max_active_days}天)", file=sys.stderr)
+
+    # 去重
     result = deduplicate(jobs)
+    print(f"[去重] 去重: {len(jobs)} → {len(result)}", file=sys.stderr)
+
     output_str = json.dumps(result, ensure_ascii=False, indent=2)
     print(output_str)
 
@@ -113,6 +171,20 @@ def main():
         Path(args.output).parent.mkdir(parents=True, exist_ok=True)
         with open(args.output, "w") as f:
             f.write(output_str)
+
+    # 猎头/非猎头分流
+    if args.split_headhunter:
+        split = split_headhunter(result)
+        out_dir = args.split_output_dir or (Path(args.output).parent if args.output else Path.cwd())
+        from pathlib import Path as _Path
+        out_dir = _Path(out_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        for key, items in split.items():
+            spath = out_dir / f"{key}.json"
+            with open(spath, "w") as f:
+                json.dump(items, f, ensure_ascii=False, indent=2)
+            print(f"[分流] {key}: {len(items)} 条 → {spath}", file=sys.stderr)
 
 
 if __name__ == "__main__":

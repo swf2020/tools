@@ -6,3 +6,7 @@ anylist/claude_code_context/.DS_Store
 .idea/
 .git/
 venv/
+__pycache__/
+find-job-workspace/
+
+
